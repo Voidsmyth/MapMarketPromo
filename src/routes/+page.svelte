@@ -1,5 +1,5 @@
 <div class=" flex justify-center">
-    <div class="prose prose-slate w-full px-20 py-12 flex flex-col items-center">
+    <div class="prose prose-neutral w-full px-20 py-12 flex flex-col items-center">
 	<h1>The Map Manifesto Draft</h1>
 	<p>The current system for TTRPG map is fundamentaly broken.</p>
 	<ul>
