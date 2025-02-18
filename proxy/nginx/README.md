@@ -1,0 +1,1 @@
+This servers as a basic nginx setup for a sveltekit app. Kept around just in case
