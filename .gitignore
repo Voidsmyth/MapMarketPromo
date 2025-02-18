@@ -25,4 +25,4 @@ vite.config.ts.timestamp-*
 
 
 #proxy details
-/proxyconfig
+/proxy/swag
