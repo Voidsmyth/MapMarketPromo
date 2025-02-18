@@ -3,9 +3,33 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-  nginx:
-        restart: always
-        build:
-            context: ./nginx
-        ports:
-            - "80:80"
+  # nginx:
+  #       restart: always
+  #       build:
+  #           context: ./nginx
+  #       ports:
+  #           - "80:80"
+  swag:
+    image: lscr.io/linuxserver/swag
+    container_name: swag
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Los_Angeles
+      - URL=mapmarket.net
+      - SUBDOMAINS=www,
+      - VALIDATION=http
+      - CERTPROVIDER=zerossl
+      # - DNSPLUGIN=cloudflare #optional
+      - EMAIL=${EMAIL}
+      # - ONLY_SUBDOMAINS=false #optional
+      # - EXTRA_DOMAINS=<extradomains> #optional
+      # - STAGING=false #optional
+    volumes:
+      - ./proxyconfig:/config
+    ports:
+      - 443:443
+      - 80:80 #optional
+    restart: unless-stopped
